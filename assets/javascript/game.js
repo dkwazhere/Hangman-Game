@@ -11,6 +11,10 @@ console.log(chooseRandom);
 
 //create underscores for words
 for (i = 0; i < chooseRandom.length; i++) {
-    underScore.push("_");
+    underScore.push(" _ ");
 }
 console.log(underScore);
+
+window.onload = function loadit() {
+document.getElementById("randomarray").innerHTML = underScore;
+}
