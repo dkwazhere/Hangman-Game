@@ -1,13 +1,16 @@
 
+
 //create array of words
+var movies = ["godzilla", "titanic", "spiderman", "rocky"];
 
 // choose word randomly
-var movies = ["godzilla", "titanic", "spiderman", "rocky"];
-var random = movies[Math.floor(Math.random() * movies.length)];
+var random = Math.floor(Math.random() * movies.length);
+var chooseRandom = movies[random];
+var underScore = [];
+console.log(chooseRandom);
 
-var listRandom = document.getElementById("random-array");
-
-// so above i can console.log a random array
-
-// now i need to list the word on my html page.
-document.getElementById("randomarray").innerHTML = listRandom;
+//create underscores for words
+for (i = 0; i < chooseRandom.length; i++) {
+    underScore.push("_");
+}
+console.log(underScore);
