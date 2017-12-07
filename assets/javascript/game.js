@@ -1,7 +1,7 @@
 
 
 //create array of words
-var movies = ["godzilla", "titanic", "spiderman", "rocky"];
+var movies = ["godzilla", "titanic", "spiderman", "rocky", "gladiator", "oldboy", "alien"];
 
 // choose word randomly
 var random = Math.floor(Math.random() * movies.length);
