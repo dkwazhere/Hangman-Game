@@ -7,25 +7,25 @@ var movies = ["godzilla", "titanic", "spiderman", "rocky", "gladiator", "oldboy"
 var random = Math.floor(Math.random() * movies.length);
 var chooseRandom = movies[random];
 var underScore = [];
+var correctLetter = [];
+var wrongLetter = [];
 // console.log(chooseRandom);
 
-//create underscores for words
+//create underscores for words in array
 for (i = 0; i < chooseRandom.length; i++) {
     underScore.push(" _ ");
 }
+//testing underscore
 console.log(underScore);
 
+// this loads the underscore array word in the html
 window.onload = function loadit() {
 document.getElementById("randomarray").innerHTML = underScore;
 }
 
-
+//user click
 document.onkeyup = function(event) {
-    var userClick = event.key
-    var clickstorage = [];
-    if ((userClick === "a") || (userClick === "b") || (userClick === "c") || (userClick === "d") || (userClick === "e") || (userClick === "f") || (userClick === "g") || (userClick === "h") || (userClick === "i") || (userClick === "j") || (userClick === "k") || (userClick === "l") || (userClick === "m") || (userClick === "n") || (userClick === "o") || (userClick === "p") || (userClick === "q") || (userClick === "r") || (userClick === "s") || (userClick === "t") || (userClick === "u") || (userClick === "v") || (userClick === "w") || (userClick === "x") || (userClick === "y") || (userClick === "z")) {
-       var click = document.querySelector("#guesses").innerHTML = "You've Guessed letters: " + userClick;
-        clickstorage.push(click);
-        console.log(click);
-    }
+    var userClick = event.key;
+    console.log(userClick);
 }
+
