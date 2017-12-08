@@ -35,7 +35,13 @@ document.onkeyup = function(event) {
             console.log(underScore);
             document.getElementById("randomarray").innerHTML = underScore;
         }
+        else {
+            // wrongLetter[wrongLetter.length] = userClick;
+            wrongLetter.push(userClick[j]);
+            document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
+        }
     }
 }
+
 
 
