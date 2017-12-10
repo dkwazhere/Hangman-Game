@@ -9,6 +9,7 @@ var chooseRandom = movies[random];
 var underScore = [];
 var correctLetter = [];
 var wrongLetter = [];
+var lives = 10;
 console.log(chooseRandom);
 
 //create underscores for words in array
@@ -34,6 +35,7 @@ document.onkeyup = function(event) {
             underScore[j] = userClick;
             console.log(underScore);
             document.getElementById("randomarray").innerHTML = underScore;
+            lives++;
         }
         else {
             // wrongLetter[wrongLetter.length] = userClick;
@@ -41,7 +43,10 @@ document.onkeyup = function(event) {
             document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
         }
     }
+        lives--;
+        document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
+        if (lives === 0) {
+            alert("You lose");
+        }
 }
-
-
-
+// document.getElementById("numberguess").innerHTML = lives;
