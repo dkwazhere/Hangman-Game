@@ -10,12 +10,14 @@ var underScore = [];
 var correctLetter = [];
 var wrongLetter = [];
 var lives = 10;
+var lettersRemaining = chooseRandom.length;
 console.log(chooseRandom);
 
 //create underscores for words in array
 for (i = 0; i < chooseRandom.length; i++) {
     underScore.push(" _ ");
 }
+
 //testing underscore
 console.log(underScore);
 
@@ -36,6 +38,7 @@ document.onkeyup = function(event) {
             console.log(underScore);
             document.getElementById("randomarray").innerHTML = underScore;
             lives++;
+            lettersRemaining--;
         }
         else {
             // wrongLetter[wrongLetter.length] = userClick;
@@ -45,8 +48,10 @@ document.onkeyup = function(event) {
     }
         lives--;
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
-        if (lives === 0) {
+        if (lives === -1) {
             alert("You lose");
         }
+        if(lettersRemaining == 0) {
+            alert('you win');
+        }
 }
-// document.getElementById("numberguess").innerHTML = lives;
