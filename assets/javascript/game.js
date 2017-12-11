@@ -37,25 +37,29 @@ document.onkeyup = function(event) {
             underScore[j] = userClick;
             console.log(underScore);
             document.getElementById("randomarray").innerHTML = underScore;
-            lives++;
+            // lives++;
             lettersRemaining--;
         }
         else {
             //prevent duplicate letters
             wrongLetter = wrongLetter.filter( function( item, index, inputArray ) {
                 return inputArray.indexOf(item) == index;
-         });
+                });
             wrongLetter.push(userClick[j]);
             document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
         }
     }
-        lives--;
+        if (wrongLetter.join(' ')) {
+            lives--;
+        }
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
         if (lives === 0) {
             alert("You lose");
+            location.reload();
         }
         if(lettersRemaining == 0) {
             alert('you win');
+            location.reload();
         }
     }
 
