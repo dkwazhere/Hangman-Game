@@ -41,7 +41,10 @@ document.onkeyup = function(event) {
             lettersRemaining--;
         }
         else {
-            // wrongLetter[wrongLetter.length] = userClick;
+            //prevent duplicate letters
+            wrongLetter = wrongLetter.filter( function( item, index, inputArray ) {
+                return inputArray.indexOf(item) == index;
+         });
             wrongLetter.push(userClick[j]);
             document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
         }
@@ -54,4 +57,5 @@ document.onkeyup = function(event) {
         if(lettersRemaining == 0) {
             alert('you win');
         }
-}
+    }
+
