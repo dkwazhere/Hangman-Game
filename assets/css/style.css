@@ -1,0 +1,23 @@
+body {
+    background-color: #306568;
+}
+.header {
+    font-family: 'Bungee', cursive;
+}
+.anykey {
+    font-family: 'Bungee', cursive;
+    font-family: 'Shadows Into Light', cursive;
+}
+.wins {
+    font-family: 'Bungee', cursive;
+    font-family: 'Shadows Into Light', cursive;
+}
+#random-array {
+    margin-top: 20px;
+}
+#lives {
+    margin-top: 20px;
+}
+#guesses {
+    margin-top: 20px;
+}

@@ -48,7 +48,7 @@ document.onkeyup = function(event) {
     }
         lives--;
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
-        if (lives === -1) {
+        if (lives === 0) {
             alert("You lose");
         }
         if(lettersRemaining == 0) {
