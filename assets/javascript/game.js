@@ -25,7 +25,6 @@ console.log(underScore);
 window.onload = function loadit() {
  document.getElementById("randomarray").innerHTML = underScore;
  }
-
 //user click
 document.onkeyup = function(event) {
     var userClick = event.key;
@@ -37,7 +36,7 @@ document.onkeyup = function(event) {
             underScore[j] = userClick;
             console.log(underScore);
             document.getElementById("randomarray").innerHTML = underScore;
-            // lives++;
+            lives++;
             lettersRemaining--;
         }
         else {
@@ -49,17 +48,24 @@ document.onkeyup = function(event) {
             document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
         }
     }
+    // negating lives if user clicks wrong letter
         if (wrongLetter.join(' ')) {
             lives--;
         }
+        // live counter
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
+        // alerting the loss
         if (lives === 0) {
             alert("You lose");
+            // reloading page after losing
             location.reload();
         }
-        if(lettersRemaining == 0) {
+    // alerting the win
+        if (underScore.join('') == chooseRandom) {
             alert('you win');
+            // reloading page after winning
             location.reload();
         }
     }
+    
 
