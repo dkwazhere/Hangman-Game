@@ -1,7 +1,7 @@
 
 
 //create array of words
-var movies = ["godzilla", "titanic", "spiderman", "rocky", "gladiator", "oldboy", "alien"];
+var movies = ["godzilla", "titanic", "spiderman", "rocky", "gladiator", "oldboy", "alien", "inception", "interstellar", "seven", "jaws", "alien", "predator", "scarface", "memento", "avatar", "shrek", "batman", "superman", "ratatouille", "troy", "matrix", "watchmen", "flubber", "jumanji"];
 
 // choose word randomly
 var random = Math.floor(Math.random() * movies.length);
@@ -10,13 +10,19 @@ var underScore = [];
 var correctLetter = [];
 var wrongLetter = [];
 var lives = 10;
-var lettersRemaining = chooseRandom.length;
+//split testing
+var split = chooseRandom.split('');
 console.log(chooseRandom);
 
 //create underscores for words in array
-for (i = 0; i < chooseRandom.length; i++) {
-    underScore.push(" _ ");
-}
+// for (i = 0; i < chooseRandom.length; i++) {
+//     underScore.push(" _ ");
+// }
+
+// testing split
+    for (i = 0; i < split.length; i ++) {
+        underScore.push(' _ ');
+    }
 
 //testing underscore
 console.log(underScore);
@@ -25,33 +31,29 @@ console.log(underScore);
 window.onload = function loadit() {
  document.getElementById("randomarray").innerHTML = underScore;
  }
+
+
 //user click
 document.onkeyup = function(event) {
     var userClick = event.key;
     // console.log(userClick);
 
 // create a loop, if user clicks a letter and is within the randomly chosen array, fill in the underscore with letter.
-    for (var j = 0; j < chooseRandom.length; j++) {
-        if (chooseRandom[j] === userClick) {
-            underScore[j] = userClick;
-            console.log(underScore);
-            document.getElementById("randomarray").innerHTML = underScore;
-            lives++;
-            lettersRemaining--;
+    if (chooseRandom.includes(userClick) === true) {
+        for (var j = 0; j < chooseRandom.length; j++) {
+            if (chooseRandom[j] === userClick) {
+                underScore[j] = userClick;
+                console.log(underScore);
+                document.getElementById("randomarray").innerHTML = underScore;
+            }
         }
-        else {
-            //prevent duplicate letters
-            wrongLetter = wrongLetter.filter( function( item, index, inputArray ) {
-                return inputArray.indexOf(item) == index;
-                });
-            wrongLetter.push(userClick[j]);
-            document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
-        }
+    } else {
+        wrongLetter.push(userClick[j]);
+        lives--;
+        document.getElementById("guesses").innerHTML = wrongLetter.join(' ');
     }
-    // negating lives if user clicks wrong letter
-        if (wrongLetter.join(' ')) {
-            lives--;
-        }
+
+
         // live counter
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
         // alerting the loss
@@ -66,6 +68,4 @@ document.onkeyup = function(event) {
             // reloading page after winning
             location.reload();
         }
-    }
-    
-
+}
