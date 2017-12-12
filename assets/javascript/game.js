@@ -56,7 +56,7 @@ document.onkeyup = function(event) {
         document.getElementById("lives").innerHTML = "You have: " + lives + " lives remaining";
         // alerting the loss
         if (lives === 0) {
-            alert("You lose");
+            alert("You lose. " + "The correct word was: " + chooseRandom);
             // reloading page after losing
             location.reload();
         }
