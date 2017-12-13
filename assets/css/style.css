@@ -7,6 +7,11 @@ body {
 .anykey {
     font-family: 'Bungee', cursive;
     font-family: 'Shadows Into Light', cursive;
+    border-style: solid;
+    float: left;
+    margin-left: 5%;
+    padding: 5%;
+    width: 285px;
 }
 .wins {
     font-family: 'Bungee', cursive;
@@ -20,4 +25,25 @@ body {
 }
 #guesses {
     margin-top: 20px;
+}
+.randomdisplay {
+    font-size: 30px;
+    font-style: bold;
+    float: right;
+    border-style: solid;
+    margin-right: 5%;
+    padding: 5%;
+    width: 285px;
+}
+#guesses {
+}
+#picture {
+    background-color: black;
+    float: left;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#wins {
+    float: right;
 }
