@@ -46,15 +46,15 @@ body {
 }
 .container {
   background-color: white;
-  padding-bottom: 18%;
+  padding-bottom: 23%;
 }
 #lives {
   position: absolute;
-  right: 50%;
-  bottom: 40%;
+  right: 45%;
+  bottom: 10%;
 }
 #guesses {
   position: absolute;
-  right: 50%;
-  bottom: 35%;
+  right: 45%;
+  bottom: 5%;
 }
