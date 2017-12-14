@@ -1,5 +1,5 @@
 body {
-    background-color: #306568;
+    background-color: #556161;
 }
 .header {
     font-family: 'Bungee', cursive;
@@ -38,12 +38,23 @@ body {
 #guesses {
 }
 #picture {
-    background-color: black;
-    float: left;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  position: absolute;
+  right: 50%;
 }
 #wins {
     float: right;
+}
+.container {
+  background-color: white;
+  padding-bottom: 18%;
+}
+#lives {
+  position: absolute;
+  right: 50%;
+  bottom: 40%;
+}
+#guesses {
+  position: absolute;
+  right: 50%;
+  bottom: 35%;
 }
